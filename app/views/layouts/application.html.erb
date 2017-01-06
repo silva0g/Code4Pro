@@ -9,50 +9,8 @@
   </head>
 
   <body>
-
-  	<!-- Dropdown structure -->
-  	<ul id="dropdown1" class="dropdown-content">
-  		<li><a href="#!">My Profile</li>
-  		<li><a href="#!">My Courses</li>
-  		<li class="divider"></li>
-  		<li><a href="#!">Log out</li>
-  	</ul>
-
-  	<!-- This second is for the mobile view -->
-  	<ul id="dropdown2" class="dropdown-content">
-  		<li><a href="#!">My Profile</li>
-  		<li><a href="#!">My Courses</li>
-  		<li class="divider"></li>
-  		<li><a href="#!">Log out</li>
-  	</ul>
-
-  
-  	
-  	<header>
-  		<nav class="deep purple lighten-2 z-depth-2">
-  			<div class="container">
-  				<div class="nav-wrapper">
-  				<a href="#!" class="brand-logo">Skill Mentor Academy</a>
-  					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu">menu</i></a>
-  					<ul class="right hide-on-med-and-down">
-  						<li><a href="#">Courses</a></li>
-  						<li><a href="#">Sign Up</a></li>
-  						<li><a href="#">Login</a></li>
-  						<!-- Dropdow trigger -->
-  						<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Luis Silva<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-  					</ul>
-  					<ul class="side-nav" id="mobile-demo">
-  						<li><a href="#">Courses</a></li>
-  						<li><a href="#">Sign Up</a></li>
-  						<li><a href="#">Login</a></li>
-  						<!-- Dropdown trigger -->
-  						<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Luis Silva<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-  					</ul>
-  				</div>
-  			</div>
-  		</nav>
-  	</header>
-
+    <%= render partial: "shared/header" %>
+    <%= render partial: "shared/message" %>
   	<main>
   		<div class="container">
   			<%= yield %>
@@ -60,32 +18,7 @@
   		</div>
   		
   	</main>
-    	
-    <footer class="page-footer deep purple lighten-2">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col l6 s12">
-    				<h5 class="white-text">Skill Mentor Academy</h5>
-    				<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-    			</div>
-    			<div class="col l4 offset-l2 s12">
-    				<h5 class="white-text">Social</h5>
-    				<ul>
-    					<li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
-    					<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
-    					<li><a class="grey-text text-lighten-3" href="#!">Google Plus</a></li>
-    					<li><a class="grey-text text-lighten-3" href="#!">Linked In</a></li>
-    				</ul>
-    			</div>
-    		</div>
-    	</div>
-    	<div class="footer-copyright">
-    		<div class="container">
-    			© 2017 Copyright Skill Mentor Academy
-    			<%= link_to "About Us", pages_about_path, :class => "grey-text text-lighten-4 right" %>
-    		</div>
-    	</div>
-    </footer>
+   	<%= render partial: "shared/footer" %>
   </body>
 
   <script>
