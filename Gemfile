@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'materialize-sass'
 gem 'devise', '~> 4.2'
-
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
