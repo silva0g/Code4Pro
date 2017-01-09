@@ -26,6 +26,7 @@ gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
+gem 'active_skin', '~> 0.0.12'
 
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
