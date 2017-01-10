@@ -75,6 +75,7 @@ class User < ApplicationRecord
           else
             name = data["name"]
           end
+          
           user = User.create(
             name: name,
             provider: access_token["provider"],
