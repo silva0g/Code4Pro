@@ -33,6 +33,8 @@ gem 'paperclip', '~> 5.1'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 
+gem 'friendly_id', '~> 5.2'
+
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'activeadmin', github: 'activeadmin'
