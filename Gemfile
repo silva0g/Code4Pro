@@ -28,6 +28,8 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
 gem 'active_skin', '~> 0.0.12'
 
+gem 'paperclip', '~> 5.1'
+
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'activeadmin', github: 'activeadmin'
