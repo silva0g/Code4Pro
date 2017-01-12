@@ -36,8 +36,11 @@ gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'friendly_id', '~> 5.2'
 
 
+
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'activeadmin', github: 'activeadmin'
+
+gem 'active_admin-sortable_tree', '~> 0.2.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
