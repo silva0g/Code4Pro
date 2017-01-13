@@ -1,17 +1,17 @@
 <header>
   <!-- Dropdown structure -->
-  <ul id="dropdown1" class="dropdown-content">
+  <ul id="dropdown1" class="dropdown-content mask">
     <li><%= link_to "My Profile", edit_user_registration_path %></li>
-    <li><a href="#!">My Courses</li>
+    <li><%= link_to "My projects", myprojects_path %></li>
     <li class="divider"></li>
     <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 
   </ul>
 
   <!-- This second is for the mobile view -->
-  <ul id="dropdown2" class="dropdown-content">
+  <ul id="dropdown2" class="dropdown-content mask">
     <li><%= link_to "My Profile", edit_user_registration_path %></li>
-    <li><a href="#!">My Courses</li>
+    <li><%= link_to "My projects", myprojects_path %></li>
     <li class="divider"></li>
     <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
   </ul>
@@ -20,17 +20,18 @@
   <nav class="indigo lighten-2 z-depth-2">
    <div class="container">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Skill Mentor Academy</a>
+      <!--<a href="#!" class="brand-logo">Skill Mentor Academy</a>-->
+      <%= link_to "Skill Mentor Academy", root_path, class: "brand-logo" %>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Courses</a></li>
+        <li><%= link_to "Projects", root_path %></li>
         <% if(!user_signed_in?)%>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Login", new_user_session_path %></li>
         <% else %>
         <!-- Dropdow trigger -->
         <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
-          <%= image_tag avatar_url(current_user), class: "circle responsive-img", height: "40", width: "40" %>&nbsp;
+          <%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
           <%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
         <% end %>
       </ul>
@@ -43,7 +44,7 @@
         <% else %>
         <!-- Dropdown trigger -->
         <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown2">
-          <%= image_tag avatar_url(current_user), class: "circle responsive-img", height: "40", width: "40" %>&nbsp;
+          <%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
           <%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
         <% end %>
       </ul>

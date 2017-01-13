@@ -18,7 +18,7 @@ ActiveAdmin.register Task do
 		column :tag
 		column :project
 
-		actions
+		actions 
 	end
 
 
