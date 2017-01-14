@@ -14,6 +14,7 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require toastr
+//= requir jquery.timeago
 //= require turbolinks
 //= require_tree .
 
