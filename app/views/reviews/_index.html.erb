@@ -6,11 +6,11 @@
 <% @reviews.order("id desc").each do |r| %>
 	<hr>
 	<div class="row">
-		<div class="col m1">
+		<div class="col m10">
 			<%= image_tag avatar_url(r.user), class: "circle responsive-image avatar-small" %>
 		</div>
 
-		<div class="com m10">
+		<div class="col m10">
 
 			<strong><%= r.user.name %></strong>
 			<span class="right"><%= timeago(r.created_at) %></span>
@@ -19,7 +19,7 @@
 		<div><%= r.comment %></div>
 
 		<div>
-			<%= link_to "Remove", [@project, r], method: :delete, date: {confirm: "Are you sure?"} if current_user && current_user.id == r.user.id %>
+			<%= link_to "Remove", [@project, r], method: :delete, data: {confirm: "Are you sure?"} if current_user && current_user.id == r.user.id %>
 		</div>
 	</div>
 
