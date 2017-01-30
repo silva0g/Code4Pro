@@ -1,7 +1,27 @@
+<% content_for :head do %>
+
+	<title><%= @project.name %> | Skill Mentor Academy</title>
+
+	<!-- twitter card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@skillmentoracademy">
+	<meta name="twitter:creator" content="@skillmentoracademy">
+	<meta name="twitter:title" content="<%= @project.name %>">
+	<meta name="twitter:description" content="<%= @project.content %>">
+	<meta name="twitter:image:src" content="<%= image_url @project.image %>">
+
+	<!-- Open Graph data -->
+	<meta property="og:site_name" content="Skill Mentor Academy">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="<%= @project.name %>">
+	<meta property="og:description" content="<%= @project.content %>">
+	<meta property="og:image" content="<%= @project.image %>">
+
+<% end %>
 <div class="row" data-no-turbolink>
-	<div class="col-m4">
-		<div class="card z-depth-2">
-		<!-- check if the user is logged In-->
+	<div class="col m2">
+		<div class="card z-depth-1">
+			<!-- check if the user is logged In-->
 			<% if !@joined %>
 				<div class="center">
 					<h3><%= @project.price == 0? "Free" : "€#{@project.price}" %></h3>
@@ -60,36 +80,45 @@
 				<div class="card-content center">
 					<br/>
 					<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-medium"%><br/>
-					<h5><%= current_user.name %></h5>&nbsp;
+					<h5 class="chip"><%= current_user.name %></h5>&nbsp;
 				</div>
 				<div class="card-action center">
+					<div class="chip">
+						Students
+					</div>
+					<br/>
+				
 					<% @users.each do |u| %>
-					<span class="valign-wrapper">
-						<%= image_tag avatar_url(u), class: "circle responsive-img avatar-small"%><br/>&nbsp;
+					<div class="chip">
+					<!--<span class="valign-wrapper">-->
+						<%= image_tag avatar_url(u)%>
+						
 						<%= u.name %>
-					</span><br/>
+
+					<!--</span><br/>-->
+					</div>
 					<% end %>
 				</div>
 			<% end %>
 		</div>
 	</div>
 
-	<div class="col-m8">
+	<div class="col m10">
 		<div class="card z-depth-2">
 			<div class="card-image">
 				<p><%= image_tag @project.image %></p>
 			</div>
 
 			<div class="row">
-				<div class="col s12">
+				<div class="col s12"><!-- antes era apenas s10 -->
 					<ul class="tabs">
 						<li class="tab col s3"><a class="active" href="#about">About</a></li>
 						<li class="tab col s3"><a  href="#videos">Videos</a></li>
-						<li class="tab col s3 disabled"><a href="#discussions">Discussions</a></li>
+						<li class="tab col s3"><a href="#discussions">Discussions</a></li>
 					</ul>
 				</div>
 
-				<div id="about" class="col s12">
+				<div id="about" class="col s12"> <!-- antes era s12 -->
 					<div class="card-content grey-text text-darken-4">
 						<h5><%= @project.name %></h5>
 						<span id="average_rating"></span>
@@ -109,11 +138,11 @@
 						<% @tasks.each do |task| %>
 						<% if task.header %>
 						<div class="collection-item active">
-							<i class="mdi-social-school"><%= task.title %></i>
+							<i class="mdi-social-school"><%= task.title %></i><span class="badge">1</span>
 						</div>
 						<% else %>
 						<%= link_to [task.project, task], class: "collection-item" do %>
-						<%= task.title %>
+						<%= task.title %><span class="badge">5.00</span>
 						<% end %>
 						<% end %>
 						<% end %>
@@ -121,14 +150,35 @@
 				</div>
 
 				
-				<div id="discussions" class="col s12">
+				<div id="discussions" class="col s10 offset-s1">
 					<!-- Discussion would be here -->
+					<div id="disqus_thread"></div>
+					<script>
+
+						/**
+						*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+						*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+						/*
+						var disqus_config = function () {
+						this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+						this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+						};
+						*/
+						var disqus_shortname = 'skillmentoracademy';
+						var disqus_identifier = '<%= @project.id %>';
+						(function() { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+							s.src = '//skillmentoracademy.disqus.com/embed.js';
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 				
 				</div>
 			</div>
 		</div>
-	</div>
-		
+	</div>		
 </div>
 <script>
 	$('#average_rating').raty({

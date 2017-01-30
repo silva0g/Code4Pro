@@ -1,7 +1,8 @@
 <div class="row" data-no-turbolink>
 	<br/>
 
-	<% if @projects.count > 0 %> <!-- Significa que o utilizador tem um projecto, entao vamos mostra a lista de projeto-->
+	<% if @projects.count > 0 %> <!-- Significa que o utilizador tem um projecto, entao vamos mostrar a lista de projetos -->
+
 		<% @projects.each do |project| %>
 			<%= link_to project do %>
 				<div class="col s12 m6 l4">

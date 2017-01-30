@@ -22,7 +22,7 @@
     <div class="nav-wrapper">
       <!--<a href="#!" class="brand-logo">Skill Mentor Academy</a>-->
       <%= link_to "Skill Mentor Academy", root_path, class: "brand-logo" %>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu">menu</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><%= link_to "Projects", root_path %></li>
         <% if(!user_signed_in?)%>
@@ -30,9 +30,14 @@
         <li><%= link_to "Login", new_user_session_path %></li>
         <% else %>
         <!-- Dropdow trigger -->
-        <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
+        <li>
+        
+        <a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
+        
           <%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
-          <%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+          <%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+        
+          </li>
         <% end %>
       </ul>
 
