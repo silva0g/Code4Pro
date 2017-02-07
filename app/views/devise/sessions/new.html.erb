@@ -8,7 +8,7 @@
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <%= render partial: "shared/devisemes" %>
+    <!-- render partials -->
     <div class="input-field">
       <%= f.email_field :email, :id => "email", :class => "validate", :placeholder => "Email" %>
     </div>
@@ -21,4 +21,5 @@
     <%= link_to "Forgot password", new_user_password_path, :class => "btn waves-effect waves-light"%>
     <% end %>
   </div>
+  <%= render partial: "shared/devisemes" %>
 </div>

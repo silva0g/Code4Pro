@@ -2,7 +2,20 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'sqlite3'
+#gem 'sqlite3' removed this for the production
+# And added this for the production
+group :development, :test do
+  gem 'sqlite3'
+end
+
+# Add this for the production
+group :production do
+  gem 'pg'
+end
+
+## Pg 
+
+
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -43,6 +56,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin-sortable_tree', '~> 0.2.1'
 
 gem 'stripe'
+
+#gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
