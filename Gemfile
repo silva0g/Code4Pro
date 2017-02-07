@@ -70,4 +70,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# Add this for production on heroku
+gem 'rails_12factor', group: :production
+
+# Add this to use pg on heroku
+gem 'pg'
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
