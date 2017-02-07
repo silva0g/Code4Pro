@@ -8,12 +8,11 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-# Add this for the production
-group :production do
-  gem 'pg'
-end
+
 
 ## Pg 
+ruby '2.3.0'
+#gem 'puma'
 
 
 gem 'puma', '~> 3.0'
@@ -70,10 +69,14 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Add this for production on heroku
-gem 'rails_12factor', group: :production
+# Add this for the production
+group :production do
+  gem 'pg'
+  # Add this for production on heroku
+gem 'rails_12factor'
 
-# Add this to use pg on heroku
-gem 'pg'
+end
+
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
